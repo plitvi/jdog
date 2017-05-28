@@ -1,14 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
-class Container extends React.Component {
+export default class Container extends React.Component {
   render() {
     return (
       <div className="container">
-
+        { this.props.childs }
       </div>
     )
   }
 }
-
-ReactDOM.render(<Container/>, document)

@@ -1212,3 +1212,41 @@
 #mainNavContainer a.navbar-brand > img {
 	height: 100%;
 }
+
+#services .variant {
+	cursor: pointer;
+	padding: 0;
+	overflow: hidden;
+	padding: 1em;
+  height: 19em;
+  border-radius: 1em;
+	transition: padding 0.1s, box-shadow 0.1s;
+}
+#services .variant:hover {
+
+}
+#services .variant:hover h2 {
+	font-size: 35px;
+}
+#services .variant:hover div {
+	box-shadow: 0px 0px 11px 1px;
+	margin: 0;
+}
+
+
+.variant div {
+	margin: 1em;
+	border-radius: inherit;
+  height: 100%;
+  line-height: 100%;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.variant h2 {
+	transition: font-size 0.1s;
+	color: white;
+}
