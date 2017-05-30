@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,400");
 
-@font-face {
+/*@font-face {
 	font-family: Lighthaus;
 	src: url('/assets/fonts/Lighthaus.otf');
-}
+}*/
 @font-face {
 	font-family: Font1;
 	src: url('/assets/fonts/Font1.ttf');
@@ -1203,6 +1203,9 @@
 				}
 
 		}
+#mainNav {
+	transition: width 2s;
+}
 #mainNavContainer .row .col-xs-12 {
 	padding: 0;
 }

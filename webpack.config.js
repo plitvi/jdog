@@ -1,5 +1,6 @@
-var webpack        = require('webpack')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var webpack              = require('webpack')
+var UglifyJsPlugin       = require('uglifyjs-webpack-plugin')
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 // var BowerWebpackPlugin = require('bower-webpack-plugin')
 
 module.exports  =  {
@@ -38,10 +39,13 @@ module.exports  =  {
       jQuery: "jquery/dist/jquery.min.js"
     }),
     new UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: true
-      }
-    })
-  ]
+      sourceMap: true
+    }),
+    new BundleAnalyzerPlugin()
+  ],
+  devServer: {
+    inline:true,
+    compress: true,
+    port: 10000
+  }
 }

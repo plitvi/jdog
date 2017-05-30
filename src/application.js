@@ -1,6 +1,3 @@
-import 'jquery'
-
-
 	var	$window = $(window),
 			$body = $('body')
 
@@ -17,11 +14,7 @@ import 'jquery'
 					wrapper_padding = parseFloat(wrapper.css("padding-top")),
 					mnheight = parseFloat($('#mainNavContainer').height()),
 					newHeight = wrapper_padding + mnheight + 'px'
-			console.log(`Debug :
-				hdr: ${hdr}
-				mn : ${wrapper_padding}
-				mnheight: ${mnheight}
-				new height: ${newHeight}`)
+			console.log(`Test`);
 
 		$window.scroll(function() {
 			if( $(this).scrollTop() > hdr ) {
