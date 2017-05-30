@@ -14,18 +14,9 @@
 					wrapper_padding = parseFloat(wrapper.css("padding-top")),
 					mnheight = parseFloat($('#mainNavContainer').height()),
 					newHeight = wrapper_padding + mnheight + 'px'
-			console.log(`Test`);
 
 		$window.scroll(function() {
-			if( $(this).scrollTop() > hdr ) {
-				wrapper.css("padding-top", newHeight)
-				mn.addClass(mnft)
-				mn.removeClass(mnst)
-			} else {
-				wrapper.css("padding-top", (wrapper_padding + 'px'))
-				mn.removeClass(mnft)
-				mn.addClass(mnst)
-			}
+
 		});
 		});
 

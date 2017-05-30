@@ -1,7 +1,24 @@
-var webpack              = require('webpack')
-var UglifyJsPlugin       = require('uglifyjs-webpack-plugin')
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-// var BowerWebpackPlugin = require('bower-webpack-plugin')
+var webpack        = require('webpack')
+
+var path           = require('path')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: './views/index.html',
+  filename: 'index.html',
+  inject: 'body'
+})
+
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPluginConfig = new UglifyJsPlugin({
+  sourceMap: true,
+  compress: {
+    warnings: true
+  }
+})
+
+const LiveReloadPlugin = require('webpack-livereload-plugin')
+
 
 module.exports  =  {
   entry: './src/vendor.js',
@@ -25,11 +42,13 @@ module.exports  =  {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['env']
-        }
+        loader: 'babel-loader'
 
+      },
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       }
     ]
   },
@@ -38,14 +57,12 @@ module.exports  =  {
       $:      "jquery/dist/jquery.min.js",
       jQuery: "jquery/dist/jquery.min.js"
     }),
-    new UglifyJsPlugin({
-      sourceMap: true
-    }),
-    new BundleAnalyzerPlugin()
+    UglifyJsPluginConfig,
+    HtmlWebpackPluginConfig,
+    new LiveReloadPlugin()
   ],
   devServer: {
-    inline:true,
     compress: true,
-    port: 10000
+    port: 8080
   }
 }

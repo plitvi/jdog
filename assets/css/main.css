@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,400");
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+
+
 
 /*@font-face {
 	font-family: Lighthaus;
@@ -1214,4 +1217,49 @@
 }
 #mainNavContainer a.navbar-brand > img {
 	height: 100%;
+}
+
+#services .variant {
+	cursor: pointer;
+	padding: 0;
+	overflow: hidden;
+	padding: 1em;
+  height: 19em;
+  border-radius: 1em;
+	transition: all 0.1s ease-in-out;
+	transition-delay: 0.5s;
+	transition-duration: 0.1s;
+}
+#services .variant:hover {
+
+}
+#services .variant:hover h2 {
+
+}
+#services .variant:hover div {
+	box-shadow: 0px 0px 11px 1px;
+	margin: 0;
+}
+
+
+.variant div {
+	margin: 1em;
+	border-radius: inherit;
+  height: 100%;
+  line-height: 100%;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.variant h2 {
+	transition-delay: 0.5s;
+	letter-spacing: 0.12em;
+	font-family: 'Noto Serif', arial;
+  background-color: rgba(0,0,0,.25);
+	transition: all 0.1s ease-in-out;
+	transition-duration: 0.1s;
+	color: white;
 }
