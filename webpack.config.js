@@ -58,6 +58,11 @@ module.exports  =  {
       $:      "jquery/dist/jquery.min.js",
       jQuery: "jquery/dist/jquery.min.js"
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
     UglifyJsPluginConfig,
     HtmlWebpackPluginConfig,
     new LiveReloadPlugin()

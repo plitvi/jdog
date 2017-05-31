@@ -5,10 +5,10 @@ import Variant from './variant.jsx'
 
 var variants = [
   { title: 'Выгул собак', text: 'Выгуливаем собак по Москве и Москвоской области', background: '/images/dog1.jpg' },
-  { title: 'Дрессировка \"медиум\"', text: 'Дрессировка с профессиональными кинологами', background: '/images/dog1.jpg' },
-  { title: 'Дрессировка \"хард\"', text: 'Дрессировка с профессиональными кинологами', background: '/images/dog1.jpg' },
-  { title: 'Зоотакси', text: 'Перевозка собак из одного пункта в другой', background: '/images/dog1.jpg' },
-  { title: 'Зоодоктор', text: 'Лечим песиков', background: '/images/dog1.jpg' }
+  { title: 'Дрессировка \"медиум\"', text: 'Дрессировка с профессиональными кинологами', background: '/images/dog2.jpg' },
+  { title: 'Дрессировка \"хард\"', text: 'Дрессировка с профессиональными кинологами', background: '/images/dog3.jpg' },
+  { title: 'Зоотакси', text: 'Перевозка собак из одного пункта в другой', background: '/images/dog4.jpg' },
+  { title: 'Зоодоктор', text: 'Лечим песиков', background: '/images/dog5.jpg' }
 ]
 
 class Row extends React.Component {
