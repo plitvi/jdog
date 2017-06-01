@@ -1,11 +1,14 @@
 import React from 'react'
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 export default class Container extends React.Component {
   render() {
     return (
-      <div className="container">
-        { this.props.childs }
-      </div>
+      <ScrollableAnchor id={ this.props.id }>
+        <div className="container">
+          { this.props.childs }
+        </div>
+      </ScrollableAnchor>
     )
   }
 }

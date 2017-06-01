@@ -1,5 +1,4 @@
 var webpack        = require('webpack')
-
 var path           = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,8 +16,7 @@ const UglifyJsPluginConfig = new UglifyJsPlugin({
   }
 })
 
-const LiveReloadPlugin = require('webpack-livereload-plugin')
-
+// const LiveReloadPlugin = require('webpack-livereload-plugin')
 
 
 module.exports  =  {
@@ -63,9 +61,7 @@ module.exports  =  {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    UglifyJsPluginConfig,
-    HtmlWebpackPluginConfig,
-    new LiveReloadPlugin()
+    HtmlWebpackPluginConfig
   ],
   devServer: {
     compress: true,

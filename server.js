@@ -13,6 +13,9 @@ app.get('/', (request, response) => {
   console.log(`starting /`);
   response.sendFile(__dirname + '/public/assets/index.html')
 })
+app.get('/glyphicons-*', (req, res) => {
+  res.sendFile(__dirname + '/public/assets' + req._parsedUrl.pathname)
+})
 app.get('/main.js', (request, response) => {
   console.log(`Starting ${request._parsedUrl.pathname}`);
   response.sendFile(__dirname + '/public/assets/' + request._parsedUrl.pathname)
