@@ -1243,14 +1243,14 @@
 #header .header img {
 	width: 100%;
 	height: auto;
-	position: absolute;
+	position: relative;
 	left: 0;
-	transition: all 2s;
 }
 #header .header img.darken {
 	height: 0;
 }
 #header .header .header-title {
+	z-index: 99;
 	position: relative;
 	top: 36vh;
 	width: 100%;
