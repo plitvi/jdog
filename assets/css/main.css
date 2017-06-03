@@ -1220,12 +1220,33 @@
 	height: 100%;
 }
 
+#services .container {
+	margin-top: 5vh;
+	width: 100vh;
+	box-shadow: 0px 0px 4px 1px;
+  background-color: rgba(222, 223, 224, 0.42);
+}
+
 #services .variant {
 
+}
+
+#services .variant img {
+	width: 10vw;
+}
+
+
+#services .variant h2 {
+	line-height: normal;
+	font-size: 2vh;
+	margin: 0 4vw;
+	flex-grow: 1;
+	text-align: center;
 }
 #services .variant:hover {
 
 }
+
 #services .variant:hover h2 {
 	/*display: none;*/
 }
@@ -1243,11 +1264,12 @@
 #header .header img {
 	width: 100%;
 	height: auto;
-	position: relative;
+	position: absolute;
 	left: 0;
+	transition: all 2s ease-in-out;
 }
 #header .header img.darken {
-	height: 0;
+	opacity: 0;
 }
 #header .header .header-title {
 	z-index: 99;
@@ -1258,17 +1280,31 @@
 .header-title span {
 	cursor: pointer;
 }
-.variant div {
+.variant .variant-entity {
+	margin: 2em;
 	height: 13em;
+	width: 25vw;
 	overflow-y: hidden;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	transition: all ease-in-out 0.3s;
 }
-.variant div img {
-	height: auto;
-	width: 100%;
-	transition: all 0.2s ease-in-out;
+.variant .variant-entity.escaped {
+	opacity: 0;
 }
-.variant h2 {
+.variant-entity .variant-image-holder {
+	display: flex;
+	flex-direction: column;
+}
+.variant-entity .variant-image-holder img {
+	align-self: center;
+}
 
+#services {
+	background: white;
+	position: absolute;
+	width: 100%;
 }

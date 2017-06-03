@@ -17,16 +17,20 @@ export default class Header extends React.Component {
     this.timeout = setTimeout(this.updateBackground.bind(this), 5000)
   }
   updateBackground () {
-    const newBackgrounId = parseInt(Math.random() * 11)
-    console.log(`New ID = ${newBackgrounId}`);
-    this.setState({
-      currentBackground: newBackgrounId
-    }, this.setTimer)
+    var interval = setInterval(() => {
+
+      const newBackgrounId = parseInt(Math.random() * 11)
+      this.setState({
+        currentBackground: newBackgrounId
+      })
+    }, 5000)
+    return interval
+
   }
   handleScroll(event) {
     let scrollTop = event.srcElement.body.scrollTop
     if(scrollTop >= 100 && !this.state.isScrolledDown) {
-      goToAnchor('section1')
+      // goToAnchor('section1')
       this.setState({
         isScrolledDown: true
       })
@@ -38,7 +42,8 @@ export default class Header extends React.Component {
     }
   }
   componentDidMount() {
-    this.setTimer()
+    // this.setTimer()
+    // this.interval = this.updateBackground()
     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
   slideDown() {
@@ -46,6 +51,7 @@ export default class Header extends React.Component {
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    clearInterval(this.interval)
   }
   render() {
     const  variants  = [
@@ -77,4 +83,7 @@ export default class Header extends React.Component {
             </div>
       )
   }
+}
+Header.propTypes = {
+  variants: React.PropTypes.arrayOf(React.PropTypes.object)
 }
