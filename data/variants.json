@@ -1,0 +1,14 @@
+[
+  { "title": "Дрессировка щенков", "text": "Выгуливаем собак по Москве и Москвоской области",      "background": "/images/labrador.svg" },
+  { "title": "Общий курс дрессировки", "text": "Дрессировка с профессиональными кинологами",       "background": "/images/labrador.svg" },
+  { "title": "Управляемая городская собака", "text": "Дрессировка с профессиональными кинологами", "background":  "/images/labrador.svg" },
+  { "title": "Коррекция поведения", "text": "Перевозка собак из одного пункта в другой",           "background": "/images/labrador.svg" },
+  { "title": "Социализация собаки", "text": "Лечим песиков",                                       "background": "/images/labrador.svg" },
+  { "title": "Выгул собак", "text": "Лечим песиков",                                               "background": "/images/labrador.svg" },
+  { "title": "Помощь в выборе щенка", "text": "Лечим песиков",                                     "background": "/images/labrador.svg" },
+  { "title": "Ветеринарная помощь на дом", "text": "Лечим песиков",                                "background": "/images/labrador.svg" },
+  { "title": "Помощь в перевозке животных (зоотакси)", "text": "Лечим песиков",                    "background": "/images/labrador.svg" },
+  { "title": "Няня для собаки", "text": "Лечим песиков",                                           "background": "/images/labrador.svg" },
+  { "title": "Фотосессия с животными", "text": "Лечим песиков",                                    "background": "/images/labrador.svg" },
+  { "title": "Хэндлинг", "text": "Лечим песиков",                                                  "background": "/images/labrador.svg" }
+]
