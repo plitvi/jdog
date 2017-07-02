@@ -4,7 +4,6 @@
 @import "/node_modules/slick-carousel/slick/slick-theme.css";
 
 
-
 /*@font-face {
 	font-family: Lighthaus;
 	src: url('/assets/fonts/Lighthaus.otf');
@@ -783,8 +782,7 @@
 					width: 100%;
 					height: 100%;
 					background-color: rgba(0, 0, 0, 0.25);
-					background-image: url("/images/overlay.png");
-				}
+			}
 
 			.item header:hover a {
 				-moz-transform: scale(1.1);
@@ -994,7 +992,6 @@
 			width: 100%;
 			height: 100%;
 			background-color: rgba(0, 0, 0, 0.25);
-			background-image: url("/images/overlay.png");
 		}
 
 		#header h1 {
@@ -1251,7 +1248,7 @@
 }
 
 #services .variant:hover h2 {
-	/*display: none;*/
+
 }
 #services .variant:hover div {
 
@@ -1282,6 +1279,64 @@
 }
 .header-title span {
 	cursor: pointer;
+}
+#services .variant:hover div {
+
+}
+#services .variant:hover div img {
+	/*transform: scale(1.3);*/
+}
+#header .header {
+	height: 100vh;
+	width: 100%;
+	overflow-y: hidden;
+}
+#header .header img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	transition: all 2s ease-in-out;
+}
+#header .header img.darken {
+	opacity: 0;
+}
+#header .header .header-title {
+	z-index: 99;
+	position: relative;
+	top: 36vh;
+	width: 100%;
+}
+.header-title span {
+	cursor: pointer;
+}
+.variant .variant-entity {
+	margin: 2em;
+	height: 13em;
+	width: auto;
+	overflow-y: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	transition: all ease-in-out 0.3s;
+}
+.variant .variant-entity.escaped {
+	opacity: 0;
+}
+.variant-entity .variant-image-holder {
+	display: flex;
+	flex-direction: column;
+}
+.variant-entity .variant-image-holder img {
+	align-self: center;
+}
+
+#services {
+	background: white;
+	position: absolute;
+	width: 100%;
 }
 .variant .variant-entity {
 	margin: 2em;

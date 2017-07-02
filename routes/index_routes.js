@@ -7,7 +7,6 @@ module.exports = function(app) {
   })
   app.get('/public/main.js.gz', (req, res) => {
     res.setHeader('content-encoding', 'gzip')
-    console.log(res);
     res.sendFile(app.__dirname + req.path)
   })
   app.get('/public/*', (request, response) => {

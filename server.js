@@ -1,7 +1,6 @@
 var app        = require('express')()
 var bodyParser = require('body-parser')
 var helmet     = require('helmet')
-var router     = require('./modules/router')
 const morgan   = require('morgan')
 var PORT = 8080
 app.__dirname = __dirname
