@@ -1226,10 +1226,13 @@
 	box-shadow: 0px 0px 4px 1px;
   background-color: rgba(222, 223, 224, 0.42);
 }
-
 #services .variant {
-
+	transition: all ease-in 0.1s;
 }
+#services .variant.selected {
+	width: 100%;
+}
+
 
 #services .variant img {
 	width: 10vw;
@@ -1283,7 +1286,7 @@
 .variant .variant-entity {
 	margin: 2em;
 	height: 13em;
-	width: 25vw;
+	width: auto;
 	overflow-y: hidden;
 	display: flex;
 	flex-direction: column;
