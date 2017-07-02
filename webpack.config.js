@@ -1,28 +1,29 @@
 var webpack        = require('webpack')
 var path           = require('path')
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './views/index.html',
-  filename: 'index.html',
-  inject: 'body'
-})
-
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const UglifyJsPluginConfig = new UglifyJsPlugin({
-  sourceMap: true,
+  sourceMap: false,
   compress: {
-    warnings: true
+    warnings: false
   }
 })
 
+const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPluginConfig = new CompressionPlugin({
+        asset: "[path].gz[query]",
+        algorithm: "gzip",
+        test: /\.js$|\.html$/,
+        threshold: 10240,
+        minRatio: 0.8
+    })
+
 // const LiveReloadPlugin = require('webpack-livereload-plugin')
 
-
 module.exports  =  {
-  entry: './src/vendor.js',
+  entry: './scripts/vendor.js',
   output: {
-    path: __dirname + '/public/assets',
+    path: __dirname + '/public/',
     filename: 'main.js'
   },
   module: {
@@ -42,7 +43,6 @@ module.exports  =  {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader'
-
       },
       {
         test: /.jsx?$/,
@@ -54,14 +54,17 @@ module.exports  =  {
   plugins: [
     new webpack.ProvidePlugin({
       $:      "jquery/dist/jquery.min.js",
-      jQuery: "jquery/dist/jquery.min.js"
+      jQuery: "jquery/dist/jquery.min.js",
+      React: 'react'
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
+    UglifyJsPluginConfig,
+    CompressionPluginConfig,
+    new webpack.EnvironmentPlugin("NODE_ENV"),
+    new webpack.optimize.CommonsChunkPlugin({
+        children: true,
+        async: true
     }),
-    HtmlWebpackPluginConfig
+    new webpack.optimize.OccurrenceOrderPlugin()
   ],
   devServer: {
     compress: true,

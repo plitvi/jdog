@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webrack": "webpack --progress --colors --watch"
+    "webrack": "NODE_ENV=production webpack -p",
+    "webrack:dev": "NODE_ENV=dev webpack --watch --colors --progress",
+    "start": "NODE_ENV=production node server.js",
+    "start:dev": "NODE_ENV=dev nodemon"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +19,7 @@
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "classnames": "^2.2.5",
+    "compression-webpack-plugin": "^0.4.0",
     "css-loader": "^0.28.3",
     "exports-loader": "^0.6.4",
     "express": "^4.15.3",
@@ -29,6 +33,7 @@
     "jquery-prioritize": "^1.1.7",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
+    "morgan": "^1.8.2",
     "node-sass": "^4.5.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
