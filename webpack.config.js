@@ -55,7 +55,8 @@ module.exports  =  {
     new webpack.ProvidePlugin({
       $:      "jquery/dist/jquery.min.js",
       jQuery: "jquery/dist/jquery.min.js",
-      React: 'react'
+      React: 'react',
+      Promise: 'bluebird'
     }),
     UglifyJsPluginConfig,
     CompressionPluginConfig,

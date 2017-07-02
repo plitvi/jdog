@@ -1,17 +1,16 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
 import Container from './container.jsx'
 import Header from './header.jsx'
 import { configureAnchors } from 'react-scrollable-anchor'
-import getVariants from '../data/provider'
 import Promise from 'bluebird'
+const DATA  =  require('../data')()
 
 
 configureAnchors({offset: -50, scrollDuration: 400})
 
 let variants
 let prepareForAction = new Promise( (resolve, reject) => {
-   getVariants.then(
+   DATA.provider.then(
      (data) => { variants = data; resolve(true) },
      (error) => { console.log(`Error ${error}`); reject(new Error('No reply from provider'))}
    )
@@ -23,10 +22,10 @@ class Constructor extends React.Component {
     super(props)
   }
   variantClick() {
-    console.log(`Holyluis! ${Object.keys(this)}`);
+
   }
   getChildContext() {
-    if (this.state) console.log(`State ${Object.keys(this.state)}`);
+
   }
   render() {
     return (
@@ -51,6 +50,7 @@ prepareForAction.then(
     )
   },
   (error) => {
+    console.log(error);
     ReactDOM.render(
       <div style= {{ color: 'red', fontSize: '36px', textAlign: 'center', padding: '10vh' }}>
         Something gone wrong <br/>Come back soon!

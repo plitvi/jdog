@@ -1,4 +1,3 @@
-import React from 'react'
 const classNames = require('classnames')
 
 export default class Variant extends React.Component {
@@ -9,10 +8,9 @@ export default class Variant extends React.Component {
     }
   }
   clickHandler() {
-    this.props.clickHandler(this)
+
   }
   render() {
-    console.log(`Props ${this.props.variantClassNames.selected}`);
     var imageHolderClasses = classNames({
       'variant-entity': true,
       'escaped': this.state.escaped

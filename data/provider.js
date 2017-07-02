@@ -1,12 +1,8 @@
-let Promise = require('bluebird')
+const Promise = require('bluebird')
+const DATA  =  require('./variants.json')
 
-
-let getVariants = new Promise( (resolve,reject) => {
-  $.get('./data/variants.json', (response) => {
-    resolve(response)
-  }).fail(() => {
-    reject(new Error('Cannot get variants json'))
-  })
+const getVariants = new Promise( (resolve, reject) => {
+  resolve(DATA)
 })
 
-export default getVariants
+module.exports = getVariants
